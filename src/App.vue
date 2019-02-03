@@ -39,11 +39,11 @@ export default {
       } else if (this.sort === "title") {
         this.sortByTitle(newItems);
       }
-      // filter by search
+      // filter by search (matching title or description)
       newItems = newItems.filter(item => {
         return (
-          item.title.toLowerCase().match(this.search) ||
-          item.descr.toLowerCase().match(this.search)
+          item.title.toLowerCase().match(this.search.toLowerCase()) ||
+          item.descr.toLowerCase().match(this.search.toLowerCase())
         );
       });
 
